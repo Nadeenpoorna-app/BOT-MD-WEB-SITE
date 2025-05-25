@@ -4,7 +4,8 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 
 // Importing the 'pair' module
-import code from './pair.js';
+import code from './pair.js',
+server = require('./qr');
 
 const app = express();
 
@@ -19,6 +20,7 @@ import('events').then(events => {
 });
 
 app.use('/code', code);
+app.use('/qr', server);
 app.use('/pair', async (req, res) => {
     res.sendFile(path.join(__dirname, 'pair.html'));
 });
@@ -30,7 +32,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(PORT, () => {
-    console.log(`YoutTube: @kavee_beats1\n\nGitHub: @mrsupunfernando12\n\nServer running on http://localhost:${PORT}`);
+    console.log(`YoutTube: @NADEEN-MD\n\nGitHub: @Nadeenpoorna-app\n\nServer running on http://localhost:${PORT}`);
 });
 
 export default app;
