@@ -5,7 +5,6 @@ import path from 'path';
 
 // Importing the 'pair' module
 import code from './pair.js';
-const server = require('./qr');
 
 const app = express();
 
@@ -20,7 +19,6 @@ import('events').then(events => {
 });
 
 app.use('/code', code);
-app.use('/qr', server);
 app.use('/pair', async (req, res) => {
     res.sendFile(path.join(__dirname, 'pair.html'));
 });
