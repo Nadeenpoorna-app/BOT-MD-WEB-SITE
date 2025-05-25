@@ -53,9 +53,9 @@ https://youtube.com/@NADEEN-MD
 
 
 
-if (fs.existsSync('./auth_info_baileys')) {
+if (fs.existsSync('./session')) {
 
-    fs.emptyDirSync(__dirname + '/auth_info_baileys');
+    fs.emptyDirSync(__dirname + '/session');
 
   };
 
@@ -71,7 +71,7 @@ if (fs.existsSync('./auth_info_baileys')) {
 
   async function SUHAIL() {
 
-    const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys')
+    const { state, saveCreds } = await useMultiFileAuthState(__dirname + 'session')
 
     try {
 
@@ -199,7 +199,7 @@ SESSION-ID ==> ${Scan_Id}
 
           await delay(1000);
 
-          try{ await fs.emptyDirSync(__dirname+'/auth_info_baileys'); }catch(e){}
+          try{ await fs.emptyDirSync(__dirname+'/session'); }catch(e){}
 
 
 
@@ -273,7 +273,7 @@ SESSION-ID ==> ${Scan_Id}
 
         exec('pm2 restart qasim');
 
-       await fs.emptyDirSync(__dirname+'/auth_info_baileys'); 
+       await fs.emptyDirSync(__dirname+'/session'); 
 
        
 
@@ -285,7 +285,7 @@ SESSION-ID ==> ${Scan_Id}
 
     console.log(err)
 
-    await fs.emptyDirSync(__dirname+'/auth_info_baileys'); 
+    await fs.emptyDirSync(__dirname+'/session'); 
 
     exec('pm2 restart qasim');
 
