@@ -5,7 +5,7 @@ import path from 'path';
 
 // Importing the 'pair' module
 import code from './pair.js';
-import server = require('./qr');
+const server = require('./qr');
 
 const app = express();
 
