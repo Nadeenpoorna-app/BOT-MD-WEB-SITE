@@ -4,8 +4,8 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 
 // Importing the 'pair' module
-import code from './pair.js',
-server = require('./qr');
+import code from './pair.js';
+import server = require('./qr');
 
 const app = express();
 
